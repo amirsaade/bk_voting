@@ -24,7 +24,7 @@ export default function HomeScreen(): JSX.Element {
       setVotes(prevVotes => [...prevVotes, newVote]);
 
       if (newVote.status === '🔴 Closed') {
-        // Remove closed votes after 10 seconds
+        // Close votes timeout 10 seconds
         setTimeout(() => {
           setVotes(prevVotes => prevVotes.filter(vote => vote.id !== newVote.id));
         }, 10000);
